@@ -2,14 +2,81 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=./a9946672/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>正在跳转</title>
+    <title>题库入口</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #f4f7fb 0%, #dde7f5 100%);
+            color: #1f2937;
+        }
+
+        .entry-card {
+            width: min(520px, calc(100vw - 32px));
+            padding: 36px 28px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 18px 48px rgba(31, 41, 55, 0.12);
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: 28px;
+        }
+
+        p {
+            margin: 0 0 24px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .entry-btn {
+            display: block;
+            padding: 16px 18px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+        }
+
+        .entry-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .entry-btn.primary {
+            background: #2563eb;
+            color: #ffffff;
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.22);
+        }
+
+        .entry-btn.secondary {
+            background: #e5eefb;
+            color: #1d4ed8;
+            box-shadow: 0 10px 20px rgba(29, 78, 216, 0.12);
+        }
+    </style>
 </head>
 <body>
-<script>
-    window.location.replace("./a9946672/");
-</script>
-<p>正在跳转到题库页面：<a href="./a9946672/">点击进入</a></p>
+<main class="entry-card">
+    <h1>题库入口</h1>
+    <p>请选择要进入的题库版本。</p>
+    <div class="button-group">
+        <a class="entry-btn primary" href="./a1432/">进入 1432 题版本</a>
+        <a class="entry-btn secondary" href="./a1000/">进入 1000 题版本</a>
+    </div>
+</main>
 </body>
 </html>
