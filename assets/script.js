@@ -327,8 +327,10 @@ function renderQuestion() {
             document.getElementById('analysis-text').innerText = q.analysis || '暂无详细解析。';
             showAnsBtn.classList.add('hidden');
             submitBtn.classList.add('hidden');
+            document.getElementById('retry-btn').classList.remove('hidden');
         } else {
             feedbackArea.classList.add('hidden');
+            document.getElementById('retry-btn').classList.add('hidden');
             showAnsBtn.classList.remove('hidden');
             if (q.type === '多选题') {
                 submitBtn.classList.remove('hidden');
@@ -585,6 +587,82 @@ function promptJump() {
             alert('输入的题号无效或超出范围！');
         }
     }
+}
+
+
+
+function retryQuestion() {
+    const q = currentQuestions[currentIndex];
+    if (!q) return;
+    
+    // 清除当前题目的答题状态
+    delete answeredStatus[q.id];
+    // 如果该题在错题集中，暂时不移除（重新答题后会根据正确性自动处理）
+    saveStorage();
+    renderQuestion();
+}
+
+// --- 导出/导入进度 ---
+
+function exportData() {
+    const examId = window.APP_EXAM_ID || "default_exam";
+    const data = {
+        version: 1,
+        examId: examId,
+        exportTime: new Date().toISOString(),
+        wrongIds: JSON.parse(localStorage.getItem(getStorageKey("ai_quiz_wrong_ids")) || "[]"),
+        favIds: JSON.parse(localStorage.getItem(getStorageKey("ai_quiz_fav_ids")) || "[]"),
+        answeredStatus: JSON.parse(localStorage.getItem(getStorageKey("ai_quiz_answered_status")) || "{}"),
+        lastIndex: parseInt(localStorage.getItem(getStorageKey("ai_quiz_last_index")) || "0")
+    };
+    
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = examId + "_progress.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+function importData(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const data = JSON.parse(e.target.result);
+            const examId = window.APP_EXAM_ID || "default_exam";
+            
+            if (!data.wrongIds || !data.favIds || !data.answeredStatus) {
+                alert("导入失败：文件格式不正确");
+                return;
+            }
+            
+            // 如果导出的题库ID与当前不同，给出警告
+            if (data.examId && data.examId !== examId) {
+                if (!confirm("检测到导入文件来自【" + data.examId + "】，当前题库是【" + examId + "】。\n继续导入可能会导致数据错乱，是否仍要导入？")) {
+                    return;
+                }
+            }
+            
+            localStorage.setItem(getStorageKey("ai_quiz_wrong_ids"), JSON.stringify(data.wrongIds));
+            localStorage.setItem(getStorageKey("ai_quiz_fav_ids"), JSON.stringify(data.favIds));
+            localStorage.setItem(getStorageKey("ai_quiz_answered_status"), JSON.stringify(data.answeredStatus));
+            localStorage.setItem(getStorageKey("ai_quiz_last_index"), String(data.lastIndex || 0));
+            
+            alert("导入成功！页面将重新加载以应用数据。");
+            location.reload();
+        } catch (err) {
+            alert("导入失败：文件解析错误 - " + err.message);
+        }
+    };
+    reader.readAsText(file);
+    // 重置input，允许重复导入同一文件
+    event.target.value = "";
 }
 
 // 启动
