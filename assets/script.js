@@ -627,42 +627,40 @@ function exportData() {
     URL.revokeObjectURL(url);
 }
 
-function importData(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-    
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        try {
-            const data = JSON.parse(e.target.result);
-            const examId = window.APP_EXAM_ID || "default_exam";
-            
-            if (!data.wrongIds || !data.favIds || !data.answeredStatus) {
-                alert("导入失败：文件格式不正确");
-                return;
-            }
-            
-            // 如果导出的题库ID与当前不同，给出警告
-            if (data.examId && data.examId !== examId) {
-                if (!confirm("检测到导入文件来自【" + data.examId + "】，当前题库是【" + examId + "】。\n继续导入可能会导致数据错乱，是否仍要导入？")) {
+function importData() {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = ".json";
+    input.onchange = function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+            try {
+                const data = JSON.parse(ev.target.result);
+                const examId = window.APP_EXAM_ID || "default_exam";
+                if (!data.wrongIds || !data.favIds || !data.answeredStatus) {
+                    alert("导入失败：文件格式不正确");
                     return;
                 }
+                if (data.examId && data.examId !== examId) {
+                    if (!confirm("检测到导入文件来自【" + data.examId + "】，当前题库是【" + examId + "】。\\n继续导入可能会导致数据错乱，是否仍要导入？")) {
+                        return;
+                    }
+                }
+                localStorage.setItem(getStorageKey("ai_quiz_wrong_ids"), JSON.stringify(data.wrongIds));
+                localStorage.setItem(getStorageKey("ai_quiz_fav_ids"), JSON.stringify(data.favIds));
+                localStorage.setItem(getStorageKey("ai_quiz_answered_status"), JSON.stringify(data.answeredStatus));
+                localStorage.setItem(getStorageKey("ai_quiz_last_index"), String(data.lastIndex || 0));
+                alert("导入成功！页面将重新加载以应用数据。");
+                location.reload();
+            } catch (err) {
+                alert("导入失败：文件解析错误 - " + err.message);
             }
-            
-            localStorage.setItem(getStorageKey("ai_quiz_wrong_ids"), JSON.stringify(data.wrongIds));
-            localStorage.setItem(getStorageKey("ai_quiz_fav_ids"), JSON.stringify(data.favIds));
-            localStorage.setItem(getStorageKey("ai_quiz_answered_status"), JSON.stringify(data.answeredStatus));
-            localStorage.setItem(getStorageKey("ai_quiz_last_index"), String(data.lastIndex || 0));
-            
-            alert("导入成功！页面将重新加载以应用数据。");
-            location.reload();
-        } catch (err) {
-            alert("导入失败：文件解析错误 - " + err.message);
-        }
+        };
+        reader.readAsText(file);
     };
-    reader.readAsText(file);
-    // 重置input，允许重复导入同一文件
-    event.target.value = "";
+    input.click();
 }
 
 // 启动
