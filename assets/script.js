@@ -79,6 +79,14 @@ function loadStorage() {
     const savedStatus = localStorage.getItem(getStorageKey('ai_quiz_answered_status'));
     if (savedStatus) {
         answeredStatus = JSON.parse(savedStatus);
+    
+}
+
+    // 加载自动跳转偏好
+    const savedAutoNext = localStorage.getItem(getStorageKey('ai_quiz_auto_next'));
+    if (savedAutoNext !== null) {
+        const cb = document.getElementById('auto-next-check');
+        if (cb) cb.checked = savedAutoNext === 'true';
     }
 
     const savedIndex = localStorage.getItem(getStorageKey('ai_quiz_last_index'));
@@ -98,6 +106,12 @@ function saveStorage() {
         lastAllIndex = currentIndex;
     }
     localStorage.setItem(getStorageKey('ai_quiz_last_index'), lastAllIndex);
+
+    // 保存自动跳转偏好
+    const cb = document.getElementById('auto-next-check');
+    if (cb) {
+        localStorage.setItem(getStorageKey('ai_quiz_auto_next'), cb.checked);
+    }
 }
 
 function switchMode(newMode, resetIndex = true) {
@@ -413,6 +427,13 @@ function submitAnswer(selected) {
     
     saveStorage();
     renderQuestion();
+    // 自动跳转：答对且开启自动跳转时，延迟后进入下一题
+    if (isCorrect && mode !== 'exam' && mode !== 'exam-review') {
+        const cb = document.getElementById('auto-next-check');
+        if (cb && cb.checked) {
+            setTimeout(() => nextQuestion(), 300);
+        }
+    }
 }
 
 function showAnswer() {
