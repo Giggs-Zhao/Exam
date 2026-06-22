@@ -41,6 +41,15 @@ async function init() {
         console.error('Failed to load questions:', error);
         document.getElementById('q-text').innerText = '加载题目失败，请检查 questions.json 是否存在。';
     }
+
+    // 监听自动跳转复选框状态变化
+    var autoCb = document.getElementById("auto-next-check");
+    if (autoCb) {
+        autoCb.addEventListener("change", function() {
+            autoNextEnabled = this.checked;
+            localStorage.setItem(getStorageKey("ai_quiz_auto_next"), this.checked);
+        });
+    }
 }
 
 function getStorageKey(key) {
@@ -86,7 +95,7 @@ function loadStorage() {
     const savedAutoNext = localStorage.getItem(getStorageKey('ai_quiz_auto_next'));
     if (savedAutoNext !== null) {
         const cb = document.getElementById('auto-next-check');
-        if (cb) cb.checked = savedAutoNext === 'true';
+        if (cb) { cb.checked = savedAutoNext === 'true'; autoNextEnabled = cb.checked; }
     }
 
     const savedIndex = localStorage.getItem(getStorageKey('ai_quiz_last_index'));
@@ -108,10 +117,7 @@ function saveStorage() {
     localStorage.setItem(getStorageKey('ai_quiz_last_index'), lastAllIndex);
 
     // 保存自动跳转偏好
-    const cb = document.getElementById('auto-next-check');
-    if (cb) {
-        localStorage.setItem(getStorageKey('ai_quiz_auto_next'), cb.checked);
-    }
+    localStorage.setItem(getStorageKey("ai_quiz_auto_next"), autoNextEnabled);
 }
 
 function switchMode(newMode, resetIndex = true) {
@@ -428,11 +434,8 @@ function submitAnswer(selected) {
     saveStorage();
     renderQuestion();
     // 自动跳转：答对且开启自动跳转时，延迟后进入下一题
-    if (isCorrect && mode !== 'exam' && mode !== 'exam-review') {
-        const cb = document.getElementById('auto-next-check');
-        if (cb && cb.checked) {
-            setTimeout(() => nextQuestion(), 300);
-        }
+    if (isCorrect && mode !== 'exam' && mode !== 'exam-review' && autoNextEnabled) {
+        setTimeout(() => nextQuestion(), 300);
     }
 }
 
