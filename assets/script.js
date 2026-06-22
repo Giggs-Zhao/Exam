@@ -15,6 +15,7 @@ let examTimerInterval = null;
 const EXAM_DURATION = 90 * 60; // 90分钟
 let timeRemaining = EXAM_DURATION;
 let examWrongIds = []; // 本次做错且原来在错题集外的错题，以及本次做对且原来在错题集内的正确题处理逻辑在submitExam中实现
+let autoNextEnabled = false; // 自动跳转开关状态
 
 // 初始化
 async function init() {
