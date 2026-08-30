@@ -325,6 +325,12 @@ function renderQuestion() {
             image.src = url;
             image.alt = '题目图片';
             image.loading = 'lazy';
+            image.addEventListener('error', () => {
+                const notice = document.createElement('span');
+                notice.className = 'image-error';
+                notice.innerText = `图片加载失败：${url.split('/').pop().split('?')[0]}`;
+                image.replaceWith(notice);
+            }, { once: true });
             imageList.appendChild(image);
         });
     }

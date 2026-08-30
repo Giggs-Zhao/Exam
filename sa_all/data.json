@@ -52,7 +52,7 @@
     "subQuestionNumber": 1,
     "topic": "磁盘管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F09e553c9e0769d9d5f70b33344c92804deb390319be9dd62895c6af4014e02e4.png%3FimageView2%2F2%2Fw%2F522%2Fformat%2Fwebp%2Fq%2F76&w=1080&q=75"
+      "images/09e553c9e0769d9d5f70b33344c92804deb390319be9dd62895c6af4014e02e4.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -82,7 +82,7 @@
     "subQuestionNumber": 2,
     "topic": "磁盘管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F09e553c9e0769d9d5f70b33344c92804deb390319be9dd62895c6af4014e02e4.png%3FimageView2%2F2%2Fw%2F522%2Fformat%2Fwebp%2Fq%2F76&w=1080&q=75"
+      "images/09e553c9e0769d9d5f70b33344c92804deb390319be9dd62895c6af4014e02e4.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -112,7 +112,7 @@
     "subQuestionNumber": 1,
     "topic": "磁盘管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fe046a3273d2851cbc676ce1aa971da3ada204da12817ace7621d3f0bf4c3b819.jpg%3FimageView2%2F2%2Fw%2F611%2Fformat%2Fwebp%2Fq%2F76&w=1920&q=75"
+      "images/e046a3273d2851cbc676ce1aa971da3ada204da12817ace7621d3f0bf4c3b819.jpg"
     ],
     "difficulty": "高频",
     "score": ""
@@ -142,7 +142,7 @@
     "subQuestionNumber": 2,
     "topic": "磁盘管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fe046a3273d2851cbc676ce1aa971da3ada204da12817ace7621d3f0bf4c3b819.jpg%3FimageView2%2F2%2Fw%2F611%2Fformat%2Fwebp%2Fq%2F76&w=1920&q=75"
+      "images/e046a3273d2851cbc676ce1aa971da3ada204da12817ace7621d3f0bf4c3b819.jpg"
     ],
     "difficulty": "高频",
     "score": ""
@@ -172,7 +172,7 @@
     "subQuestionNumber": 1,
     "topic": "磁盘管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fed7a24deca5fc795c7b87fe9347aa2c3f7f8ee409f48fed6f5a153e12305e482.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/ed7a24deca5fc795c7b87fe9347aa2c3f7f8ee409f48fed6f5a153e12305e482.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -202,7 +202,7 @@
     "subQuestionNumber": 1,
     "topic": "磁盘管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Ff95084b717e545239708619dfca2248a9ac05b99d53e0d12e56351d84e6ca592.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/f95084b717e545239708619dfca2248a9ac05b99d53e0d12e56351d84e6ca592.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -290,8 +290,8 @@
     "subQuestionNumber": 1,
     "topic": "进程管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F7546b1915b04aed1d2f893f369a6b17827047135938625000f9ed21acbea0998.jpg%3FimageView2%2F2%2Fw%2F218%2Fformat%2Fwebp%2Fq%2F76&w=640&q=75",
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F1cca04de61e48b65eef5a3c24724404c2ab266e3e6399f30981e3bf8c65410f1.jpg%3FimageView2%2F2%2Fw%2F343%2Fformat%2Fwebp%2Fq%2F76&w=750&q=75"
+      "images/7546b1915b04aed1d2f893f369a6b17827047135938625000f9ed21acbea0998.jpg",
+      "images/1cca04de61e48b65eef5a3c24724404c2ab266e3e6399f30981e3bf8c65410f1.jpg"
     ],
     "difficulty": "高频",
     "score": ""
@@ -321,8 +321,8 @@
     "subQuestionNumber": 2,
     "topic": "进程管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F7546b1915b04aed1d2f893f369a6b17827047135938625000f9ed21acbea0998.jpg%3FimageView2%2F2%2Fw%2F218%2Fformat%2Fwebp%2Fq%2F76&w=640&q=75",
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F1cca04de61e48b65eef5a3c24724404c2ab266e3e6399f30981e3bf8c65410f1.jpg%3FimageView2%2F2%2Fw%2F343%2Fformat%2Fwebp%2Fq%2F76&w=750&q=75"
+      "images/7546b1915b04aed1d2f893f369a6b17827047135938625000f9ed21acbea0998.jpg",
+      "images/1cca04de61e48b65eef5a3c24724404c2ab266e3e6399f30981e3bf8c65410f1.jpg"
     ],
     "difficulty": "高频",
     "score": ""
@@ -380,7 +380,7 @@
     "subQuestionNumber": 1,
     "topic": "进程管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F7a5aa834cceeecd2be5278741321ac3ee863226031714d9d1cb4fb02b28a4b1e.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/7a5aa834cceeecd2be5278741321ac3ee863226031714d9d1cb4fb02b28a4b1e.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -410,7 +410,7 @@
     "subQuestionNumber": 2,
     "topic": "进程管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F7a5aa834cceeecd2be5278741321ac3ee863226031714d9d1cb4fb02b28a4b1e.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/7a5aa834cceeecd2be5278741321ac3ee863226031714d9d1cb4fb02b28a4b1e.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -470,7 +470,7 @@
     "subQuestionNumber": 1,
     "topic": "进程管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F4d9ecd49735b9f057c35b09ef3c98fcd43875ca3f23f75f79e732a10fd77b498.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/4d9ecd49735b9f057c35b09ef3c98fcd43875ca3f23f75f79e732a10fd77b498.png"
     ],
     "difficulty": "中等",
     "score": ""
@@ -501,7 +501,7 @@
     "subQuestionNumber": 2,
     "topic": "进程管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F4d9ecd49735b9f057c35b09ef3c98fcd43875ca3f23f75f79e732a10fd77b498.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/4d9ecd49735b9f057c35b09ef3c98fcd43875ca3f23f75f79e732a10fd77b498.png"
     ],
     "difficulty": "中等",
     "score": ""
@@ -560,7 +560,7 @@
     "subQuestionNumber": 1,
     "topic": "进程管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F26d04d4f333824f2ebe8eac8ea0946591fcba1c30a05ece3b88916867b33bdf1.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/26d04d4f333824f2ebe8eac8ea0946591fcba1c30a05ece3b88916867b33bdf1.png"
     ],
     "difficulty": "中等",
     "score": ""
@@ -1049,7 +1049,7 @@
     "subQuestionNumber": 1,
     "topic": "内存管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F88031249812a0e265de72d44556891045b04369f19c63d2c0feb5c0074fd34f5.png%3FimageView2%2F2%2Fw%2F510%2Fformat%2Fwebp%2Fq%2F76&w=1080&q=75"
+      "images/88031249812a0e265de72d44556891045b04369f19c63d2c0feb5c0074fd34f5.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -1080,7 +1080,7 @@
     "subQuestionNumber": 2,
     "topic": "内存管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F88031249812a0e265de72d44556891045b04369f19c63d2c0feb5c0074fd34f5.png%3FimageView2%2F2%2Fw%2F510%2Fformat%2Fwebp%2Fq%2F76&w=1080&q=75"
+      "images/88031249812a0e265de72d44556891045b04369f19c63d2c0feb5c0074fd34f5.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -1110,7 +1110,7 @@
     "subQuestionNumber": 1,
     "topic": "内存管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F5238c8fe3da0e18eb4a696d0bdeb2535fdc91bf5bb26dc39a02d64bac1eb78c2.png%3FimageView2%2F2%2Fw%2F688%2Fformat%2Fwebp%2Fq%2F76&w=1920&q=75"
+      "images/5238c8fe3da0e18eb4a696d0bdeb2535fdc91bf5bb26dc39a02d64bac1eb78c2.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -1140,7 +1140,7 @@
     "subQuestionNumber": 2,
     "topic": "内存管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F5238c8fe3da0e18eb4a696d0bdeb2535fdc91bf5bb26dc39a02d64bac1eb78c2.png%3FimageView2%2F2%2Fw%2F688%2Fformat%2Fwebp%2Fq%2F76&w=1920&q=75"
+      "images/5238c8fe3da0e18eb4a696d0bdeb2535fdc91bf5bb26dc39a02d64bac1eb78c2.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -1171,7 +1171,7 @@
     "subQuestionNumber": 1,
     "topic": "内存管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F33e7e211979dbb8ca6c67fd37e04a890fcbef74bfc642f2587fcbe77acbd1097.png%3FimageView2%2F2%2Fw%2F589%2Fformat%2Fwebp%2Fq%2F76&w=1200&q=75"
+      "images/33e7e211979dbb8ca6c67fd37e04a890fcbef74bfc642f2587fcbe77acbd1097.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -1202,7 +1202,7 @@
     "subQuestionNumber": 2,
     "topic": "内存管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F33e7e211979dbb8ca6c67fd37e04a890fcbef74bfc642f2587fcbe77acbd1097.png%3FimageView2%2F2%2Fw%2F589%2Fformat%2Fwebp%2Fq%2F76&w=1200&q=75"
+      "images/33e7e211979dbb8ca6c67fd37e04a890fcbef74bfc642f2587fcbe77acbd1097.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -1233,7 +1233,7 @@
     "subQuestionNumber": 1,
     "topic": "内存管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F5c59e7e47d4d6d3697c92665873c694e878dd1450d4297d0082abc628fcf0bb8.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/5c59e7e47d4d6d3697c92665873c694e878dd1450d4297d0082abc628fcf0bb8.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -1291,7 +1291,7 @@
     "subQuestionNumber": 1,
     "topic": "内存管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F46491e594a3cb1fdd0a171698a326307f0c6ae8d9edc9be49c68288ffe17f4a2.png%3FimageView2%2F2%2Fw%2F146%2Fformat%2Fwebp%2Fq%2F76&w=384&q=75"
+      "images/46491e594a3cb1fdd0a171698a326307f0c6ae8d9edc9be49c68288ffe17f4a2.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -1349,7 +1349,7 @@
     "subQuestionNumber": 1,
     "topic": "前趋图",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fbeb2ca3b35e6b80a7b65046c41239b67a659e9913a3085adc0f33c3988321e50.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/beb2ca3b35e6b80a7b65046c41239b67a659e9913a3085adc0f33c3988321e50.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -1379,7 +1379,7 @@
     "subQuestionNumber": 2,
     "topic": "前趋图",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fbeb2ca3b35e6b80a7b65046c41239b67a659e9913a3085adc0f33c3988321e50.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/beb2ca3b35e6b80a7b65046c41239b67a659e9913a3085adc0f33c3988321e50.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -1409,7 +1409,7 @@
     "subQuestionNumber": 1,
     "topic": "前趋图",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F09f9ae3a8bb2fb914d6d6cfb282204156b3fd4bdb78922f4495d68530409dbc7.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/09f9ae3a8bb2fb914d6d6cfb282204156b3fd4bdb78922f4495d68530409dbc7.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -1439,7 +1439,7 @@
     "subQuestionNumber": 1,
     "topic": "前趋图",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fa9e07e546e220804e4a24df6421760092716a48da1030542c7a2d4dcca62723b.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/a9e07e546e220804e4a24df6421760092716a48da1030542c7a2d4dcca62723b.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -1469,7 +1469,7 @@
     "subQuestionNumber": 1,
     "topic": "前趋图",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fd5f70f63b147f3d474717ff3424743c41034089f6d14ba8ef57f894248b91fa9.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/d5f70f63b147f3d474717ff3424743c41034089f6d14ba8ef57f894248b91fa9.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -1499,7 +1499,7 @@
     "subQuestionNumber": 1,
     "topic": "前趋图",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F647dfc68ab94923f224dbea0a2dcd55c9403fe8b5e9a049ec32596b2f5ab7a9b.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/647dfc68ab94923f224dbea0a2dcd55c9403fe8b5e9a049ec32596b2f5ab7a9b.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -1529,7 +1529,7 @@
     "subQuestionNumber": 1,
     "topic": "前趋图",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F671a7bad395c72cbb6bf272c528b4d9dfc530604e7207037e58442017158acfa.png%3FimageView2%2F2%2Fw%2F574%2Fformat%2Fwebp%2Fq%2F76&w=1200&q=75"
+      "images/671a7bad395c72cbb6bf272c528b4d9dfc530604e7207037e58442017158acfa.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -5101,7 +5101,7 @@
     "subQuestionNumber": 1,
     "topic": "应用层协议",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fc69c41d4d9b01a322acea7c4c30f48aaeadc781a20a96d5415eae50401b10b37.jpg%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/c69c41d4d9b01a322acea7c4c30f48aaeadc781a20a96d5415eae50401b10b37.jpg"
     ],
     "difficulty": "中等",
     "score": ""
@@ -5615,7 +5615,7 @@
     "subQuestionNumber": 1,
     "topic": "流水线",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F46251d0ddd064bea45a2f37e2744de958cb5894d8a7a6cd55374f605114fe909.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/46251d0ddd064bea45a2f37e2744de958cb5894d8a7a6cd55374f605114fe909.png"
     ],
     "difficulty": "中频",
     "score": ""
@@ -8171,7 +8171,7 @@
     "subQuestionNumber": 1,
     "topic": "程序复杂度",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F3ca65f101346a3def1f7ef58bb6c86e56576a6a45ef2af8e30a479c2ad2fdc2e.png%3FimageView2%2F2%2Fw%2F414%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/3ca65f101346a3def1f7ef58bb6c86e56576a6a45ef2af8e30a479c2ad2fdc2e.png"
     ],
     "difficulty": "低频",
     "score": ""
@@ -13311,7 +13311,7 @@
     "subQuestionNumber": 1,
     "topic": "关系数据库",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F64dff492905bf009b5190d761585bbcabadb7293dc95d60966d22c464582f705.png%3FimageView2%2F2%2Fw%2F366%2Fformat%2Fwebp%2Fq%2F76&w=750&q=75"
+      "images/64dff492905bf009b5190d761585bbcabadb7293dc95d60966d22c464582f705.png"
     ],
     "difficulty": "中等",
     "score": ""
@@ -13342,7 +13342,7 @@
     "subQuestionNumber": 2,
     "topic": "关系数据库",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F64dff492905bf009b5190d761585bbcabadb7293dc95d60966d22c464582f705.png%3FimageView2%2F2%2Fw%2F366%2Fformat%2Fwebp%2Fq%2F76&w=750&q=75"
+      "images/64dff492905bf009b5190d761585bbcabadb7293dc95d60966d22c464582f705.png"
     ],
     "difficulty": "中等",
     "score": ""
@@ -13518,7 +13518,7 @@
     "subQuestionNumber": 1,
     "topic": "关系数据库",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Ffccb10d3d41396081f32398044279fd990697d843046049428cb711b01ef4ed0.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/fccb10d3d41396081f32398044279fd990697d843046049428cb711b01ef4ed0.png"
     ],
     "difficulty": "中等",
     "score": ""
@@ -14828,7 +14828,7 @@
     "subQuestionNumber": 1,
     "topic": "动态规划",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F9db55d29b86f84f51568ba4be26ccc38d504b8dc35a9029bea114edbc1435cba.png%3FimageView2%2F2%2Fw%2F294%2Fformat%2Fwebp%2Fq%2F76&w=640&q=75"
+      "images/9db55d29b86f84f51568ba4be26ccc38d504b8dc35a9029bea114edbc1435cba.png"
     ],
     "difficulty": "中频",
     "score": ""
@@ -14858,7 +14858,7 @@
     "subQuestionNumber": 1,
     "topic": "动态规划",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fc0e01970c15ab752a2960ad24278d8f092bb444509e34c53308a412e4809bc2c.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/c0e01970c15ab752a2960ad24278d8f092bb444509e34c53308a412e4809bc2c.png"
     ],
     "difficulty": "中频",
     "score": ""
@@ -15059,7 +15059,7 @@
     "subQuestionNumber": 1,
     "topic": "网络流量",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F064836c06d52db091efec2cf872fa759aa492e8c9f346c95abd03936e9d728bb.png%3FimageView2%2F2%2Fw%2F499%2Fformat%2Fwebp%2Fq%2F76&w=1080&q=75"
+      "images/064836c06d52db091efec2cf872fa759aa492e8c9f346c95abd03936e9d728bb.png"
     ],
     "difficulty": "低频",
     "score": ""
@@ -15202,7 +15202,7 @@
     "subQuestionNumber": 1,
     "topic": "应用数学",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fb9b2f4619d9a350e55ed9636fb6e72acc776e83c9b99530dacf8c482119103c4.png%3FimageView2%2F2%2Fw%2F442%2Fformat%2Fwebp%2Fq%2F76&w=1080&q=75"
+      "images/b9b2f4619d9a350e55ed9636fb6e72acc776e83c9b99530dacf8c482119103c4.png"
     ],
     "difficulty": "中等",
     "score": ""
@@ -15433,7 +15433,7 @@
     "subQuestionNumber": 1,
     "topic": "应用数学",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fff211fb68e4c60d1e79d1f93202a133ad34da23aea2d5d18c9deab46fd21c451.png%3FimageView2%2F2%2Fw%2F447%2Fformat%2Fwebp%2Fq%2F76&w=1080&q=75"
+      "images/ff211fb68e4c60d1e79d1f93202a133ad34da23aea2d5d18c9deab46fd21c451.png"
     ],
     "difficulty": "中等",
     "score": ""
@@ -15521,7 +15521,7 @@
     "subQuestionNumber": 1,
     "topic": "预测与决策",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fd584fb4935869f2a4cd6c32ef13d99a1f104e0b319e79fe72d090c2720a50dd0.png%3FimageView2%2F2%2Fw%2F295%2Fformat%2Fwebp%2Fq%2F76&w=640&q=75"
+      "images/d584fb4935869f2a4cd6c32ef13d99a1f104e0b319e79fe72d090c2720a50dd0.png"
     ],
     "difficulty": "困难",
     "score": ""
@@ -17499,7 +17499,7 @@
     "subQuestionNumber": 1,
     "topic": "设计模式",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F7ce54cb23788d2f4eca0f6744956ebf0f5ad5aed70469d928b5cfed924ee8840.png%3FimageView2%2F2%2Fw%2F437%2Fformat%2Fwebp%2Fq%2F76&w=1080&q=75"
+      "images/7ce54cb23788d2f4eca0f6744956ebf0f5ad5aed70469d928b5cfed924ee8840.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -17530,7 +17530,7 @@
     "subQuestionNumber": 2,
     "topic": "设计模式",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F7ce54cb23788d2f4eca0f6744956ebf0f5ad5aed70469d928b5cfed924ee8840.png%3FimageView2%2F2%2Fw%2F437%2Fformat%2Fwebp%2Fq%2F76&w=1080&q=75"
+      "images/7ce54cb23788d2f4eca0f6744956ebf0f5ad5aed70469d928b5cfed924ee8840.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -18875,7 +18875,7 @@
     "subQuestionNumber": 1,
     "topic": "4+1视图",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F2a0b8952512823bb0a1e67af786f0c14d58239682b0faf4e0e17fd100053294a.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/2a0b8952512823bb0a1e67af786f0c14d58239682b0faf4e0e17fd100053294a.png"
     ],
     "difficulty": "中等",
     "score": ""
@@ -18906,7 +18906,7 @@
     "subQuestionNumber": 2,
     "topic": "4+1视图",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F2a0b8952512823bb0a1e67af786f0c14d58239682b0faf4e0e17fd100053294a.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/2a0b8952512823bb0a1e67af786f0c14d58239682b0faf4e0e17fd100053294a.png"
     ],
     "difficulty": "中等",
     "score": ""
@@ -27309,7 +27309,7 @@
     "subQuestionNumber": 1,
     "topic": "云计算与虚拟化架构",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F5b41cbe6a86aaa8c74744c2ce46ddd7ce15e670f9293ada63f4b9fa17bb4c39d.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/5b41cbe6a86aaa8c74744c2ce46ddd7ce15e670f9293ada63f4b9fa17bb4c39d.png"
     ],
     "difficulty": "中频",
     "score": ""
@@ -28645,7 +28645,7 @@
     "subQuestionNumber": 1,
     "topic": "遗留系统",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fe6d8db58951b44e7d5419b24f32863aef173e19432b7861b2d556cc179b873dd.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/e6d8db58951b44e7d5419b24f32863aef173e19432b7861b2d556cc179b873dd.png"
     ],
     "difficulty": "中频",
     "score": ""
@@ -28955,7 +28955,7 @@
     "subQuestionNumber": 1,
     "topic": "进度管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fafdbf9f7cfc573dfac8b0eb51a59d17e6500c269f2571adb2fbb6f25a11ddd9b.png%3FimageView2%2F2%2Fw%2F646%2Fformat%2Fwebp%2Fq%2F76&w=1920&q=75"
+      "images/afdbf9f7cfc573dfac8b0eb51a59d17e6500c269f2571adb2fbb6f25a11ddd9b.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -28985,7 +28985,7 @@
     "subQuestionNumber": 2,
     "topic": "进度管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fafdbf9f7cfc573dfac8b0eb51a59d17e6500c269f2571adb2fbb6f25a11ddd9b.png%3FimageView2%2F2%2Fw%2F646%2Fformat%2Fwebp%2Fq%2F76&w=1920&q=75"
+      "images/afdbf9f7cfc573dfac8b0eb51a59d17e6500c269f2571adb2fbb6f25a11ddd9b.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -29045,7 +29045,7 @@
     "subQuestionNumber": 1,
     "topic": "进度管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F168a50fdf5cda0ceed46c33dee3c4645d4440cf63e65b43c0ccda4ad0b67d555.png%3FimageView2%2F2%2Fw%2F766%2Fformat%2Fwebp%2Fq%2F76&w=1920&q=75"
+      "images/168a50fdf5cda0ceed46c33dee3c4645d4440cf63e65b43c0ccda4ad0b67d555.png"
     ],
     "difficulty": "困难",
     "score": ""
@@ -29075,7 +29075,7 @@
     "subQuestionNumber": 1,
     "topic": "进度管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F5b8c0a6ef16080db080b98d0dcf735b86031f23ef9ca3063344c627a9ba3a0bc.png%3FimageView2%2F2%2Fw%2F450%2Fformat%2Fwebp%2Fq%2F76&w=1080&q=75"
+      "images/5b8c0a6ef16080db080b98d0dcf735b86031f23ef9ca3063344c627a9ba3a0bc.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -29105,7 +29105,7 @@
     "subQuestionNumber": 1,
     "topic": "进度管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F382e11e5dbc7d5d190c064c13f8819a25ae2d64cf5d61bb826c4e6fec93c87ef.png%3FimageView2%2F2%2Fw%2F600%2Fformat%2Fwebp%2Fq%2F76&w=1200&q=75"
+      "images/382e11e5dbc7d5d190c064c13f8819a25ae2d64cf5d61bb826c4e6fec93c87ef.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -29136,7 +29136,7 @@
     "subQuestionNumber": 1,
     "topic": "进度管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F2467eda965fbdee6f5561c2e7e9fe536b647fea22de6df6c37ef5e7cf2d7373a.png%3FimageView2%2F2%2Fw%2F530%2Fformat%2Fwebp%2Fq%2F76&w=1080&q=75"
+      "images/2467eda965fbdee6f5561c2e7e9fe536b647fea22de6df6c37ef5e7cf2d7373a.png"
     ],
     "difficulty": "困难",
     "score": ""
@@ -29166,7 +29166,7 @@
     "subQuestionNumber": 1,
     "topic": "进度管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Ffe3184cad5557feff0735525b63c1d44f52fb9f637cb272a2887d6af6934abc7.png%3FimageView2%2F2%2Fw%2F1407%2Fformat%2Fwebp%2Fq%2F76&w=3840&q=75"
+      "images/fe3184cad5557feff0735525b63c1d44f52fb9f637cb272a2887d6af6934abc7.png"
     ],
     "difficulty": "高频",
     "score": ""
@@ -29197,7 +29197,7 @@
     "subQuestionNumber": 1,
     "topic": "进度管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F4ac96e666f155f836f441a4a10f31f4d7c4fffa2b29f59637faeb8262150098f.png%3FimageView2%2F2%2Fw%2F514%2Fformat%2Fwebp%2Fq%2F76&w=1080&q=75"
+      "images/4ac96e666f155f836f441a4a10f31f4d7c4fffa2b29f59637faeb8262150098f.png"
     ],
     "difficulty": "困难",
     "score": ""
@@ -29257,7 +29257,7 @@
     "subQuestionNumber": 1,
     "topic": "配置管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fb9092f2e970c8461143bace7989d9f66e71346f472043f958e6072f004f51389.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/b9092f2e970c8461143bace7989d9f66e71346f472043f958e6072f004f51389.png"
     ],
     "difficulty": "中等",
     "score": ""
@@ -29288,7 +29288,7 @@
     "subQuestionNumber": 2,
     "topic": "配置管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2Fb9092f2e970c8461143bace7989d9f66e71346f472043f958e6072f004f51389.png%3FimageView2%2F2%2Fw%2F400%2Fformat%2Fwebp%2Fq%2F76&w=828&q=75"
+      "images/b9092f2e970c8461143bace7989d9f66e71346f472043f958e6072f004f51389.png"
     ],
     "difficulty": "中等",
     "score": ""
@@ -29348,7 +29348,7 @@
     "subQuestionNumber": 1,
     "topic": "配置管理",
     "images": [
-      "https://www.cheko.cc/_next/image?url=https%3A%2F%2Foss.cheko.cc%2F5add81010c66e6bed3cb936ee1e4b0060a6c42d99d10c12d4c9e59e7edb0cdb5.jpg%3FimageView2%2F2%2Fw%2F594%2Fformat%2Fwebp%2Fq%2F76&w=1200&q=75"
+      "images/5add81010c66e6bed3cb936ee1e4b0060a6c42d99d10c12d4c9e59e7edb0cdb5.jpg"
     ],
     "difficulty": "中等",
     "score": ""
