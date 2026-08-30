@@ -3,6 +3,7 @@ let currentQuestions = [];
 let currentIndex = 0;
 let lastAllIndex = 0; // 记录全部题库的进度
 let mode = 'all'; // 'all' or 'wrong' or 'fav'
+let filters = { search: '', domain: '', point: '' };
 let wrongQuestionsIds = new Set();
 let favQuestionsIds = new Set();
 let answeredStatus = {}; // { qId: { selected: 'A', isCorrect: true } }
@@ -27,6 +28,7 @@ async function init() {
         }
         allQuestions = await response.json();
         window.APP_QUESTIONS = allQuestions; // 兼容后续需要访问全局变量的场景
+        initQuestionFilters();
         
         // 执行平滑数据迁移（将旧的通用名称迁移到专属命名空间）
         migrateOldData();
@@ -51,6 +53,79 @@ async function init() {
             localStorage.setItem(getStorageKey("ai_quiz_auto_next"), this.checked);
         });
     }
+}
+
+function initQuestionFilters() {
+    const domainFilter = document.getElementById('domain-filter');
+    const pointFilter = document.getElementById('point-filter');
+    const searchInput = document.getElementById('search-input');
+    const clearFilters = document.getElementById('clear-filters');
+    if (!domainFilter || !pointFilter || !searchInput || !clearFilters) return;
+    const addOptions = (select, values) => {
+        [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'zh-CN')).forEach(value => {
+            const option = document.createElement('option');
+            option.value = value;
+            option.innerText = value;
+            select.appendChild(option);
+        });
+    };
+    addOptions(domainFilter, allQuestions.map(q => q.knowledgeDomain));
+    addOptions(pointFilter, allQuestions.map(q => q.knowledgePoint));
+
+    searchInput.addEventListener('input', event => {
+        filters.search = event.target.value.trim().toLowerCase();
+        applyQuestionFilters();
+    });
+    domainFilter.addEventListener('change', event => {
+        filters.domain = event.target.value;
+        applyQuestionFilters();
+    });
+    pointFilter.addEventListener('change', event => {
+        filters.point = event.target.value;
+        applyQuestionFilters();
+    });
+    clearFilters.addEventListener('click', () => {
+        filters = { search: '', domain: '', point: '' };
+        document.getElementById('search-input').value = '';
+        domainFilter.value = '';
+        pointFilter.value = '';
+        applyQuestionFilters();
+    });
+}
+
+function getFilteredQuestions() {
+    return allQuestions.filter(q => {
+        if (filters.domain && q.knowledgeDomain !== filters.domain) return false;
+        if (filters.point && q.knowledgePoint !== filters.point) return false;
+        if (!filters.search) return true;
+        const searchable = [
+            q.question, q.knowledgeDomain, q.knowledgePoint, q.topic,
+            q.source, q.analysis, q.knowledgeSummary,
+            ...(Array.isArray(q.tags) ? q.tags : [q.tags].filter(Boolean)),
+            ...Object.values(q.options || {})
+        ].join(' ').toLowerCase();
+        return searchable.includes(filters.search);
+    });
+}
+
+function applyQuestionFilters() {
+    if (mode !== 'all') return;
+    currentQuestions = getFilteredQuestions();
+    currentIndex = 0;
+    renderQuestionListState();
+}
+
+function renderQuestionListState() {
+    document.getElementById('empty-state').classList.add('hidden');
+    if (currentQuestions.length === 0) {
+        document.getElementById('quiz-card').classList.add('hidden');
+        document.getElementById('empty-state').classList.remove('hidden');
+        document.getElementById('empty-state').querySelector('h3').innerText = '没有匹配题目';
+        document.getElementById('empty-state').querySelector('p').innerText = '请调整搜索条件或筛选项。';
+        return;
+    }
+    document.getElementById('quiz-card').classList.remove('hidden');
+    renderQuestion();
 }
 
 function getStorageKey(key) {
@@ -134,6 +209,9 @@ function switchMode(newMode, resetIndex = true) {
     }
 
     mode = newMode;
+
+    const questionFilters = document.getElementById('question-filters');
+    if (questionFilters) questionFilters.classList.toggle('hidden', mode !== 'all');
     
     if (mode === 'all') {
         currentIndex = lastAllIndex;
@@ -170,7 +248,10 @@ function switchMode(newMode, resetIndex = true) {
     }
 
     if (mode === 'all') {
-        currentQuestions = allQuestions;
+        currentQuestions = getFilteredQuestions();
+        if (currentQuestions.length > 0) {
+            currentIndex = Math.min(currentIndex, currentQuestions.length - 1);
+        }
     } else if (mode === 'wrong') {
         currentQuestions = allQuestions.filter(q => wrongQuestionsIds.has(q.id));
         // 进入错题模式时，将错题的记录标记为“非本轮作答”，以便解锁重新作答，但不删除原始记录
@@ -215,6 +296,38 @@ function renderQuestion() {
     document.getElementById('q-text').innerText = q.question;
     document.getElementById('q-difficulty').innerText = `难度：${q.difficulty || '一般'}`;
     document.getElementById('current-index-display').innerText = `${currentIndex + 1} / ${currentQuestions.length}`;
+
+    const meta = document.getElementById('question-meta');
+    const addMeta = (label, value, className = '') => {
+        if (!meta) return;
+        if (!value) return;
+        const item = document.createElement('span');
+        item.className = `meta-item ${className}`;
+        const labelNode = document.createElement('strong');
+        labelNode.innerText = `${label}：`;
+        item.appendChild(labelNode);
+        item.appendChild(document.createTextNode(Array.isArray(value) ? value.join('、') : value));
+        meta.appendChild(item);
+    };
+    if (meta) {
+        meta.innerHTML = '';
+        addMeta('知识域', q.knowledgeDomain);
+        addMeta('知识点', q.knowledgePoint);
+        addMeta('标签', q.tags, 'meta-tags');
+        addMeta('题号', q.subQuestionNumber ? `第 ${q.questionNumber} 题 · 子题 ${q.subQuestionNumber}` : `第 ${q.questionNumber} 题`);
+    }
+
+    const imageList = document.getElementById('question-images');
+    if (imageList) {
+        imageList.innerHTML = '';
+        (q.images || []).forEach(url => {
+            const image = document.createElement('img');
+            image.src = url;
+            image.alt = '题目图片';
+            image.loading = 'lazy';
+            imageList.appendChild(image);
+        });
+    }
     
     // 更新收藏按钮状态
     const favBtn = document.getElementById('fav-btn');
@@ -337,6 +450,7 @@ function renderQuestion() {
         feedbackArea.classList.remove('hidden');
         document.getElementById('correct-ans').innerText = q.answer;
         document.getElementById('analysis-text').innerText = q.analysis || '暂无详细解析。';
+        renderKnowledgeDetails(q);
         showAnsBtn.classList.add('hidden');
         submitBtn.classList.add('hidden');
         document.getElementById('exit-review-btn').classList.remove('hidden');
@@ -346,11 +460,13 @@ function renderQuestion() {
             feedbackArea.classList.remove('hidden');
             document.getElementById('correct-ans').innerText = q.answer;
             document.getElementById('analysis-text').innerText = q.analysis || '暂无详细解析。';
+            renderKnowledgeDetails(q);
             showAnsBtn.classList.add('hidden');
             submitBtn.classList.add('hidden');
             document.getElementById('retry-btn').classList.remove('hidden');
         } else {
             feedbackArea.classList.add('hidden');
+            renderKnowledgeDetails(null);
             document.getElementById('retry-btn').classList.add('hidden');
             showAnsBtn.classList.remove('hidden');
             if (q.type === '多选题') {
@@ -371,6 +487,23 @@ function renderQuestion() {
     } else {
         document.getElementById('next-btn').disabled = false;
     }
+}
+
+function renderKnowledgeDetails(q) {
+    const summaryBox = document.getElementById('knowledge-summary-box');
+    const sourceBox = document.getElementById('source-box');
+    if (!summaryBox || !sourceBox) return;
+    if (!q) {
+        summaryBox.classList.add('hidden');
+        sourceBox.classList.add('hidden');
+        return;
+    }
+    const summary = q.knowledgeSummary || '';
+    summaryBox.classList.toggle('hidden', !summary);
+    document.getElementById('knowledge-summary-text').innerText = summary;
+    const source = [q.source, q.sourceFile].filter(Boolean).join(' · ');
+    sourceBox.classList.toggle('hidden', !source);
+    document.getElementById('source-text').innerText = source;
 }
 
 function selectOption(key, element, type) {

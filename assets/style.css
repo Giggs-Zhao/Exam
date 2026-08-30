@@ -383,6 +383,103 @@ body {
     line-height: 1.5;
 }
 
+.question-filters {
+    width: 100%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: minmax(220px, 1.5fr) minmax(150px, 1fr) minmax(150px, 1fr) auto;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.filter-field input,
+.filter-field select {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    color: var(--text-main);
+    font: inherit;
+    font-weight: 400;
+    outline: none;
+}
+
+.filter-field input:focus,
+.filter-field select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.12);
+}
+
+.filter-clear {
+    align-self: end;
+    height: 40px;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.filter-clear:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.question-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: -0.75rem 0 1.5rem;
+}
+
+.meta-item {
+    padding: 5px 9px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #f8fafc;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+}
+
+.meta-item strong {
+    color: var(--text-main);
+}
+
+.meta-tags {
+    background: #fff7ed;
+    border-color: #fed7aa;
+}
+
+.question-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: -0.75rem 0 1.5rem;
+}
+
+.question-images:empty {
+    display: none;
+}
+
+.question-images img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
 .options-list {
     display: flex;
     flex-direction: column;
@@ -471,6 +568,40 @@ body {
 
 .analysis-box p {
     font-size: 0.95rem;
+    color: var(--text-main);
+    white-space: pre-wrap;
+}
+
+.knowledge-box {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+}
+
+.knowledge-box h4 {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.knowledge-box p {
+    font-size: 0.95rem;
+    white-space: pre-wrap;
+}
+
+.source-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.source-box span:first-child {
+    font-weight: 700;
     color: var(--text-main);
 }
 
