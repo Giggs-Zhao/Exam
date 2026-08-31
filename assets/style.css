@@ -386,19 +386,26 @@ body {
 .question-filters {
     width: 100%;
     max-width: 800px;
-    display: grid;
-    grid-template-columns: minmax(220px, 1.5fr) minmax(150px, 1fr) minmax(150px, 1fr) auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
     gap: 10px;
     margin-bottom: 1rem;
 }
 
 .filter-field {
+    min-width: 0;
+    flex: 1 1 150px;
     display: flex;
     flex-direction: column;
     gap: 4px;
     color: var(--text-muted);
     font-size: 0.75rem;
     font-weight: 700;
+}
+
+.filter-search {
+    flex-basis: 220px;
 }
 
 .filter-field input,
@@ -422,6 +429,7 @@ body {
 }
 
 .filter-clear {
+    flex: 0 0 auto;
     align-self: end;
     height: 40px;
     padding: 0 14px;
