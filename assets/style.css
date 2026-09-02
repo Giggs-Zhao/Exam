@@ -394,7 +394,7 @@ body {
 }
 
 .filter-field {
-    min-width: 0;
+    min-width: 150px;
     flex: 1 1 150px;
     display: flex;
     flex-direction: column;
@@ -443,6 +443,17 @@ body {
 .filter-clear:hover {
     border-color: var(--primary);
     color: var(--primary);
+}
+
+@media (max-width: 480px) {
+    .question-filters .filter-field {
+        min-width: 0;
+        flex-basis: 100%;
+    }
+
+    .question-filters .filter-clear {
+        width: 100%;
+    }
 }
 
 .question-meta {
