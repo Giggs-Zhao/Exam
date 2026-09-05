@@ -1021,15 +1021,20 @@ function handleProgressClick() {
 
 function openAnswerSheet() {
     const container = document.getElementById('answer-sheet-grid');
+    const summary = document.getElementById('answer-sheet-summary');
     container.innerHTML = '';
     
     // 我们改变一下 HTML 结构，不要给 answer-sheet-grid 加 grid-container class
     container.className = 'answer-sheet-content';
     
+    const isExamMode = (mode === 'exam' || mode === 'exam-review') && examQuestions.length > 0;
+    const questionPool = isExamMode ? examQuestions : allQuestions;
+    const counts = { correct: 0, wrong: 0, unanswered: 0 };
+
     let currentType = null;
     let currentGrid = null;
     
-    examQuestions.forEach((q, index) => {
+    questionPool.forEach((q, index) => {
         if (q.type !== currentType) {
             currentType = q.type;
             const section = document.createElement('div');
@@ -1050,16 +1055,30 @@ function openAnswerSheet() {
         item.className = 'grid-item';
         item.innerText = index + 1;
         
-        if (examAnswers[q.id]) {
-            item.classList.add('answered');
-        }
-        
-        if (mode === 'exam-review') {
-            const isCorrect = (examAnswers[q.id] || '') === q.answer;
-            if (isCorrect) {
+        if (isExamMode) {
+            const selected = examAnswers[q.id] || '';
+            if (selected) {
+                item.classList.add('answered');
+            }
+            if (mode === 'exam-review') {
+                const isCorrect = selected === q.answer;
+                item.classList.add(isCorrect ? 'correct' : 'wrong');
+                counts[isCorrect ? 'correct' : 'wrong']++;
+            } else if (selected) {
+                counts.answered = (counts.answered || 0) + 1;
+            } else {
+                counts.unanswered++;
+            }
+        } else {
+            const status = answeredStatus[q.id];
+            if (!status) {
+                counts.unanswered++;
+            } else if (status.isCorrect) {
                 item.classList.add('correct');
+                counts.correct++;
             } else {
                 item.classList.add('wrong');
+                counts.wrong++;
             }
         }
         
@@ -1067,9 +1086,15 @@ function openAnswerSheet() {
             item.classList.add('current');
         }
         
-        item.onclick = () => jumpToExamQuestion(index);
+        item.onclick = () => jumpToSheetQuestion(q, index);
         currentGrid.appendChild(item);
     });
+
+    if (isExamMode && mode === 'exam') {
+        summary.innerText = `共 ${questionPool.length} 题 · 已作答 ${counts.answered || 0} · 未做 ${counts.unanswered}`;
+    } else {
+        summary.innerText = `共 ${questionPool.length} 题 · 正确 ${counts.correct} · 未做 ${counts.unanswered} · 错误 ${counts.wrong}`;
+    }
     
     document.getElementById('answer-sheet-modal').classList.remove('hidden');
 }
@@ -1082,6 +1107,33 @@ function jumpToExamQuestion(index) {
     closeAnswerSheet();
     currentIndex = index;
     renderQuestion();
+}
+
+function jumpToSheetQuestion(question, index) {
+    closeAnswerSheet();
+
+    if ((mode === 'exam' || mode === 'exam-review') && examQuestions.length > 0) {
+        jumpToExamQuestion(index);
+        return;
+    }
+
+    // 状态面板展示完整题库；点击被筛选隐藏的题目时，自动回到完整题库定位。
+    if (mode !== 'all' || filters.search || filters.domain || filters.point) {
+        filters = { search: '', domain: '', point: '' };
+        const searchInput = document.getElementById('search-input');
+        const domainFilter = document.getElementById('domain-filter');
+        const pointFilter = document.getElementById('point-filter');
+        if (searchInput) searchInput.value = '';
+        if (domainFilter) domainFilter.value = '';
+        if (pointFilter) pointFilter.value = '';
+        switchMode('all', false);
+    }
+
+    currentQuestions = allQuestions;
+    currentIndex = allQuestions.findIndex(item => item.id === question.id);
+    if (currentIndex < 0) currentIndex = 0;
+    renderQuestion();
+    saveStorage();
 }
 
 // --- 试卷回顾逻辑 ---

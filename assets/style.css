@@ -259,6 +259,25 @@ body {
     background-color: #eef2ff;
 }
 
+.progress-sheet-btn {
+    margin-left: 8px;
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: white;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.progress-sheet-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background-color: #eef2ff;
+}
+
 /* Quiz Card */
 .quiz-card {
     background: var(--bg-card);
@@ -790,6 +809,52 @@ body {
     overflow-y: auto;
 }
 
+.answer-sheet-summary {
+    margin-bottom: 12px;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.answer-sheet-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.answer-sheet-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: white;
+}
+
+.legend-dot.unanswered {
+    background: #e2e8f0;
+    border-color: #94a3b8;
+}
+
+.legend-dot.correct {
+    background: var(--success);
+    border-color: var(--success);
+}
+
+.legend-dot.wrong {
+    background: var(--danger);
+    border-color: var(--danger);
+}
+
 .answer-sheet-content {
     display: flex;
     flex-direction: column;
@@ -850,15 +915,21 @@ body {
 }
 
 .grid-item.correct {
-    background: #f0fdf4;
-    color: var(--success);
+    background: var(--success);
+    color: white;
     border-color: var(--success);
 }
 
 .grid-item.wrong {
-    background: #fef2f2;
-    color: var(--danger);
+    background: var(--danger);
+    color: white;
     border-color: var(--danger);
+}
+
+.grid-item:not(.correct):not(.wrong):not(.answered) {
+    background: #e2e8f0;
+    color: var(--text-main);
+    border-color: #94a3b8;
 }
 
 /* Scrollbar */

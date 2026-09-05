@@ -46,7 +46,8 @@
                 <h2 id="mode-title">📚 全部题库</h2>
                 <div class="user-actions">
                     <span id="timer-display" class="timer hidden" title="考试剩余时间">01:30:00</span>
-                    <span id="current-index-display" onclick="handleProgressClick()" title="点击查看进度/答题卡">1 / 1000</span>
+                    <span id="current-index-display" onclick="handleProgressClick()" title="点击输入题号跳转">1 / 1000</span>
+                    <button id="progress-sheet-btn" class="progress-sheet-btn" type="button" onclick="openAnswerSheet()" title="查看所有题目的答题状态">📊 答题状态</button>
                 </div>
             </header>
 
@@ -158,6 +159,12 @@
                 <button class="close-btn" onclick="closeAnswerSheet()">×</button>
             </div>
             <div class="modal-body">
+                <div id="answer-sheet-summary" class="answer-sheet-summary"></div>
+                <div class="answer-sheet-legend" aria-label="答题状态说明">
+                    <span><i class="legend-dot unanswered"></i>未做</span>
+                    <span><i class="legend-dot correct"></i>正确</span>
+                    <span><i class="legend-dot wrong"></i>错误</span>
+                </div>
                 <div id="answer-sheet-grid" class="answer-sheet-content">
                     <!-- JavaScript 将在这里生成数字方块 -->
                 </div>
