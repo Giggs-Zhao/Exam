@@ -1093,7 +1093,9 @@ function openAnswerSheet() {
     if (isExamMode && mode === 'exam') {
         summary.innerText = `共 ${questionPool.length} 题 · 已作答 ${counts.answered || 0} · 未做 ${counts.unanswered}`;
     } else {
-        summary.innerText = `共 ${questionPool.length} 题 · 正确 ${counts.correct} · 未做 ${counts.unanswered} · 错误 ${counts.wrong}`;
+        const judgedCount = counts.correct + counts.wrong;
+        const accuracy = judgedCount > 0 ? `${((counts.correct / judgedCount) * 100).toFixed(1)}%` : '—';
+        summary.innerText = `共 ${questionPool.length} 题 · 正确 ${counts.correct} · 未做 ${counts.unanswered} · 错误 ${counts.wrong} · 准确率 ${accuracy}`;
     }
     
     document.getElementById('answer-sheet-modal').classList.remove('hidden');
