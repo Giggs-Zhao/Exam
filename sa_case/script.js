@@ -89,8 +89,12 @@ function bindStaticEvents() {
     byId('close-sheet-btn').addEventListener('click', closeSheet);
     document.querySelector('.modal-backdrop').addEventListener('click', closeSheet);
 
-    byId('export-btn').addEventListener('click', exportProgress);
-    byId('import-btn').addEventListener('click', () => byId('import-input').click());
+    ['export-btn', 'mobile-export-btn'].forEach(id => {
+        byId(id).addEventListener('click', exportProgress);
+    });
+    ['import-btn', 'mobile-import-btn'].forEach(id => {
+        byId(id).addEventListener('click', () => byId('import-input').click());
+    });
     byId('import-input').addEventListener('change', importProgress);
     byId('reset-btn').addEventListener('click', resetProgress);
 
@@ -198,6 +202,7 @@ function renderCurrent() {
 
     byId('case-number').textContent = `案例 ${item.number}`;
     byId('case-date').textContent = `${item.year} 年 ${item.month} 月`;
+    byId('case-total-score').textContent = `总分 ${item.totalScore || item.questions.reduce((sum, question) => sum + (question.score || 0), 0)} 分`;
     byId('case-title').textContent = `${item.title}（${item.topic}）`;
     renderMeta(item);
     renderStem(item);
@@ -257,7 +262,8 @@ function renderQuestions(item) {
 
     item.questions.forEach(question => {
         const block = makeElement('section', 'question-block');
-        const title = makeElement('h4', 'question-title', `问题 ${question.number}`);
+        const scoreText = Number.isFinite(question.score) ? `（${question.score} 分）` : '';
+        const title = makeElement('h4', 'question-title', `问题 ${question.number}${scoreText}`);
         const prompt = makeElement('div', 'question-prompt preserve-lines', question.prompt);
         const label = makeElement('label', 'answer-label', '我的答案');
         label.htmlFor = `draft-${item.id}-${question.number}`;

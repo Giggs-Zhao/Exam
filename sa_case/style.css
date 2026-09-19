@@ -331,6 +331,10 @@ textarea:focus-visible {
     gap: 8px;
 }
 
+.mobile-actions {
+    display: none;
+}
+
 .position-button {
     height: 40px;
     min-width: 70px;
@@ -402,6 +406,15 @@ textarea:focus-visible {
     font-weight: 750;
 }
 
+.score-badge {
+    padding: 3px 8px;
+    border: 1px solid #b8d7c5;
+    border-radius: 999px;
+    background: #eef8f1;
+    color: #17633a;
+    white-space: nowrap;
+}
+
 .case-heading h3 {
     margin-top: 8px;
     overflow-wrap: anywhere;
@@ -463,6 +476,10 @@ textarea:focus-visible {
 .question-title {
     margin-bottom: 10px;
     font-size: 16px;
+}
+
+.question-title {
+    color: #17261d;
 }
 
 .preserve-lines {
@@ -807,6 +824,17 @@ textarea:focus-visible {
         padding: 24px 22px 42px;
     }
 
+    .mobile-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin: 14px 0 4px;
+    }
+
+    .mobile-actions .button {
+        width: 100%;
+    }
+
     .filters {
         grid-template-columns: minmax(200px, 1fr) 130px 190px auto;
     }
@@ -909,6 +937,10 @@ textarea:focus-visible {
 
     .filters {
         grid-template-columns: 1fr;
+    }
+
+    .mobile-actions {
+        gap: 6px;
     }
 
     .search-field {
