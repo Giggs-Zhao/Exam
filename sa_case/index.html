@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <title>软架案例题 - 刷题工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="brand-mark">案</span>
+                <div>
+                    <h1>软架案例题</h1>
+                    <p>案例分析练习</p>
+                </div>
+            </div>
+
+            <nav class="nav" aria-label="题库视图">
+                <button class="nav-item active" data-mode="all" type="button">
+                    <span>全部题目</span><span id="all-count" class="badge">75</span>
+                </button>
+                <button class="nav-item" data-mode="unfinished" type="button">
+                    <span>未完成</span><span id="unfinished-count" class="badge">75</span>
+                </button>
+                <button class="nav-item" data-mode="review" type="button">
+                    <span>待复习</span><span id="review-count" class="badge badge-warn">0</span>
+                </button>
+                <button class="nav-item" data-mode="favorite" type="button">
+                    <span>已收藏</span><span id="favorite-count" class="badge badge-fav">0</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-stats">
+                <div class="stat-line"><span>学习进度</span><strong id="progress-label">0 / 75</strong></div>
+                <div class="progress-track"><span id="progress-bar"></span></div>
+            </div>
+
+            <div class="sidebar-actions">
+                <button id="resume-btn" class="button primary wide" type="button">继续学习</button>
+                <div class="action-row">
+                    <button id="export-btn" class="button quiet" type="button">导出</button>
+                    <button id="import-btn" class="button quiet" type="button">导入</button>
+                </div>
+                <button id="reset-btn" class="button danger-text wide" type="button">重置学习进度</button>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <p id="mode-eyebrow" class="eyebrow">全部题目</p>
+                    <h2 id="page-title">案例分析题库</h2>
+                </div>
+                <div class="topbar-actions">
+                    <button id="position-btn" class="position-button" type="button" title="跳转到指定题目">1 / 75</button>
+                    <button id="sheet-btn" class="button quiet" type="button">答题卡</button>
+                </div>
+            </header>
+
+            <section id="filters" class="filters" aria-label="筛选题目">
+                <label class="field search-field">
+                    <span>搜索</span>
+                    <input id="search-input" type="search" placeholder="题干、知识点或答案" autocomplete="off">
+                </label>
+                <label class="field">
+                    <span>年份</span>
+                    <select id="year-filter"><option value="">全部年份</option></select>
+                </label>
+                <label class="field">
+                    <span>知识点</span>
+                    <select id="topic-filter"><option value="">全部知识点</option></select>
+                </label>
+                <button id="clear-filter-btn" class="button quiet filter-clear" type="button">清除</button>
+            </section>
+
+            <section id="case-view" class="case-sheet" aria-live="polite">
+                <div class="case-heading">
+                    <div class="case-heading-main">
+                        <div class="case-kicker"><span id="case-number">案例 1</span><span id="case-date">2013 年 11 月</span></div>
+                        <h3 id="case-title">正在加载题目...</h3>
+                        <div id="case-meta" class="meta-list"></div>
+                    </div>
+                    <button id="favorite-btn" class="favorite-button" type="button" aria-pressed="false" title="收藏题目">
+                        <span aria-hidden="true">☆</span><span class="favorite-label">收藏</span>
+                    </button>
+                </div>
+
+                <section id="stem-section" class="stem-section hidden">
+                    <h4>题目说明</h4>
+                    <div id="case-stem" class="preserve-lines"></div>
+                </section>
+
+                <div id="case-images" class="case-images"></div>
+                <div id="questions-list" class="questions-list"></div>
+
+                <div class="case-actions">
+                    <button id="prev-btn" class="button quiet" type="button">上一题</button>
+                    <button id="reveal-all-btn" class="button outline" type="button">提交并对照答案</button>
+                    <button id="next-btn" class="button primary" type="button">下一题</button>
+                </div>
+
+                <div id="self-check" class="self-check hidden">
+                    <div>
+                        <strong>完成自评</strong>
+                        <p>根据答案对照结果标记本题，后续可在“待复习”中集中练习。</p>
+                    </div>
+                    <div class="self-check-actions">
+                        <button id="review-btn" class="button warning" type="button">需要复习</button>
+                        <button id="mastered-btn" class="button success" type="button">已经掌握</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="empty-state" class="empty-state hidden">
+                <h3>没有匹配的题目</h3>
+                <p>请调整筛选条件，或切换到其他题库视图。</p>
+                <button id="empty-reset-btn" class="button primary" type="button">查看全部题目</button>
+            </section>
+        </main>
+    </div>
+
+    <div id="sheet-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+        <button class="modal-backdrop" type="button" aria-label="关闭答题卡"></button>
+        <section class="modal-panel">
+            <header class="modal-header">
+                <div>
+                    <p class="eyebrow">学习概览</p>
+                    <h3 id="sheet-title">答题卡</h3>
+                </div>
+                <button id="close-sheet-btn" class="icon-button" type="button" aria-label="关闭">×</button>
+            </header>
+            <div id="sheet-summary" class="sheet-summary"></div>
+            <div class="sheet-legend">
+                <span><i class="dot untouched"></i>未开始</span>
+                <span><i class="dot draft"></i>有草稿</span>
+                <span><i class="dot complete"></i>已掌握</span>
+                <span><i class="dot review"></i>待复习</span>
+            </div>
+            <div id="sheet-grid" class="sheet-grid"></div>
+        </section>
+    </div>
+
+    <input id="import-input" type="file" accept="application/json" hidden>
+    <script src="script.js"></script>
+</body>
+</html>
