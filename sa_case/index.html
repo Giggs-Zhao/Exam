@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="light">
+    <meta name="color-scheme" content="light dark">
+    <script>(function(){try{var t=localStorage.getItem('sa-theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}})();</script>
     <title>软架案例题 - 刷题工具</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -57,6 +58,7 @@
                 <div class="topbar-actions">
                     <button id="position-btn" class="position-button" type="button" title="跳转到指定题目">1 / 75</button>
                     <button id="sheet-btn" class="button quiet" type="button">答题卡</button>
+                    <button class="theme-toggle button quiet" type="button" data-theme-toggle aria-pressed="false" title="切换到夜间模式">🌙 夜间模式</button>
                 </div>
             </header>
 
@@ -150,5 +152,6 @@
 
     <input id="import-input" type="file" accept="application/json" hidden>
     <script src="script.js"></script>
+    <script src="../assets/theme.js"></script>
 </body>
 </html>

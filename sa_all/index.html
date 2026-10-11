@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>软架-选择题 - 刷题工具</title>
+    <script>(function(){try{var t=localStorage.getItem('sa-theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}})();</script>
     <link rel="stylesheet" href="../assets/style.css">
 </head>
 
@@ -48,6 +50,7 @@
                     <span id="timer-display" class="timer hidden" title="考试剩余时间">01:30:00</span>
                     <span id="current-index-display" onclick="handleProgressClick()" title="点击输入题号跳转">1 / 1000</span>
                     <button id="progress-sheet-btn" class="progress-sheet-btn" type="button" onclick="openAnswerSheet()" title="查看所有题目的答题状态">📊 答题状态</button>
+                    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" title="切换到夜间模式">🌙 夜间模式</button>
                 </div>
             </header>
 
@@ -174,6 +177,7 @@
 
     <script>window.APP_EXAM_ID = "软架-选择题";</script>
     <script src="../assets/script.js"></script>
+    <script src="../assets/theme.js"></script>
 </body>
 
 </html>

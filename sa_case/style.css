@@ -951,3 +951,44 @@ textarea:focus-visible {
         grid-template-columns: repeat(5, minmax(36px, 1fr));
     }
 }
+/* Day/night theme */
+.theme-toggle { white-space: nowrap; }
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --ink: #e5edf7;
+    --muted: #9aabc0;
+    --line: #334155;
+    --surface: #1e293b;
+    --canvas: #0f172a;
+    --accent-soft: #173b2c;
+    --amber-soft: #493619;
+    --red-soft: #451f2a;
+    --blue-soft: #1d3554;
+}
+html[data-theme="dark"] body { background: var(--canvas); color: var(--ink); }
+html[data-theme="dark"] .sidebar { background: #111827; border-right-color: #263449; }
+html[data-theme="dark"] .nav-item.active { background: #294936; border-color: #3b654a; color: #dff7e7; }
+html[data-theme="dark"] .nav-item:hover { background: #223248; }
+html[data-theme="dark"] .case-sheet,
+html[data-theme="dark"] .empty-state,
+html[data-theme="dark"] .modal-panel { background: var(--surface); color: var(--ink); }
+html[data-theme="dark"] .position-button,
+html[data-theme="dark"] .field input,
+html[data-theme="dark"] .field select,
+html[data-theme="dark"] .button.quiet,
+html[data-theme="dark"] .favorite-button,
+html[data-theme="dark"] .icon-button { background: #172337; color: var(--ink); border-color: var(--line); }
+html[data-theme="dark"] .meta-chip,
+html[data-theme="dark"] .case-images a,
+html[data-theme="dark"] .self-check,
+html[data-theme="dark"] .sheet-item { background: #172337; color: var(--muted); }
+html[data-theme="dark"] .question-prompt { color: var(--ink); }
+html[data-theme="dark"] .draft-input { background: #172337; color: var(--ink); border-color: var(--line); }
+html[data-theme="dark"] .paper-draft { background: #202b3d; }
+html[data-theme="dark"] .answer-panel { background: #173b2c; }
+html[data-theme="dark"] .modal-backdrop { background: rgba(0, 0, 0, 0.72); }
+html[data-theme="dark"] .button.outline:hover { background: #234833; }
+html[data-theme="dark"] .theme-toggle { background: #172337; color: var(--ink); }
+@media (max-width: 420px) {
+    .topbar-actions { flex-wrap: wrap; justify-content: flex-end; }
+}

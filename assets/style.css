@@ -1057,3 +1057,63 @@ body {
         flex: 1 1 calc(50% - 8px);
     }
 }
+/* Day/night theme */
+.theme-toggle {
+    margin-left: 8px;
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--bg-card);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.theme-toggle:hover { border-color: var(--primary); color: var(--primary); }
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #e5edf7;
+    --text-muted: #94a3b8;
+    --sidebar-bg: #111827;
+    --sidebar-text: #dbeafe;
+    --border: #334155;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+html[data-theme="dark"] body { background-color: var(--bg-main); color: var(--text-main); }
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .quiz-card,
+html[data-theme="dark"] .modal-content { background-color: var(--bg-card); }
+html[data-theme="dark"] .sidebar { border-right-color: var(--border); }
+html[data-theme="dark"] .top-bar h2,
+html[data-theme="dark"] .q-text,
+html[data-theme="dark"] .analysis-box p,
+html[data-theme="dark"] .knowledge-box p,
+html[data-theme="dark"] .source-box span:first-child { color: var(--text-main); }
+html[data-theme="dark"] #current-index-display,
+html[data-theme="dark"] .progress-sheet-btn,
+html[data-theme="dark"] .fav-btn,
+html[data-theme="dark"] .filter-field input,
+html[data-theme="dark"] .filter-field select,
+html[data-theme="dark"] .grid-item { background: #172337; color: var(--text-main); }
+html[data-theme="dark"] .q-type,
+html[data-theme="dark"] .feedback-area,
+html[data-theme="dark"] .meta-item { background: #263449; }
+html[data-theme="dark"] .option-item.selected { background-color: #263b5c; }
+html[data-theme="dark"] .option-item.correct { background-color: #123a2a; }
+html[data-theme="dark"] .option-item.wrong,
+html[data-theme="dark"] .image-error { background-color: #451f2a; }
+html[data-theme="dark"] .analysis-box,
+html[data-theme="dark"] .btn.secondary { background-color: #334155; color: var(--text-main); }
+html[data-theme="dark"] .btn.outline:hover,
+html[data-theme="dark"] #current-index-display:hover,
+html[data-theme="dark"] .progress-sheet-btn:hover { background-color: #263b5c; }
+html[data-theme="dark"] .modal-overlay { background: rgba(0, 0, 0, 0.72); }
+html[data-theme="dark"] .grid-item:not(.correct):not(.wrong):not(.answered) { background: #334155; border-color: #64748b; }
+html[data-theme="dark"] .theme-toggle { background: #172337; }
+@media (max-width: 560px) {
+    .user-actions { flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+    .theme-toggle { margin-left: 0; }
+}
